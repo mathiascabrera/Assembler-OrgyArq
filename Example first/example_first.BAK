@@ -1,0 +1,23 @@
+;Crear un listado de numeros enteros a partir de la direccion $80 hasta la $90.
+;Aplicar el Ca1 a todos los elementos y almacenarlos en la misma direccion.
+
+                ORG $80
+LISTA           DB $45,$D1,$55,$78,$FF,$01,$33,$A0,$D4,$54,$22
+LONG            DB $0B
+
+                ORG $EE00
+                LDX #LISTA
+inicio:          LDA ,X
+                COMA
+                STA ,X
+                DEC LONG
+                BEQ fin
+                INCX
+                BRA inicio
+               
+fin:           SWI
+
+               ORG $FFFA
+               DW $EE00
+               DW $EE00
+               DW $EE00
