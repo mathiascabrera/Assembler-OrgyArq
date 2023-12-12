@@ -1,6 +1,6 @@
 ;Create a list of 12 integers (even and odd), of size 1 Byte, stored at address $90.
 ;Every time an odd value is found, 1 must be added to it and overwritten in the list.
-;At the end of the program all values ??in the list must be even.
+;At the end of the program, all values ​​in the list must be even.
 ;At address $80 the number of elements in the list is indicated (LENGTH = 12).
 ;Save the total of odd numbers at address $81.
 
