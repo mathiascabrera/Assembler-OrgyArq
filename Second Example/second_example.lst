@@ -1,0 +1,42 @@
+
+second_example.asm     Assembled with CASM08Z  11/12/2023  23:12:58  PAGE 1
+
+
+
+                        1  ;Create a list of integers from address $80 to $85.
+                        2  ;Apply Ca2 to all elements and save them starting 
+                                                               from address 90.
+                        3  
+ 0080                   4                  ORG $80                             
+                                                                ;memory address
+ 0080      45D15578     5  LISTA           DB $45,$D1,$55,$78,$FF,$01          
+                                                               ;random integers
+           FF01 
+ 0086      06           6  LENGTH          DB $06                              
+                                                                   ;list length
+                        7  
+ EE00                   8                  ORG $EE00         ;program direction
+ EE00 [02] AE80         9                  LDX #LISTA        ;load at index x
+ EE02 [02] F6          10  START:          LDA ,X            ;load at acumulato
+                                                                              r
+ EE03 [01] 40          11                  NEGA              ;Ca2
+ EE04 [03] E710        12                  STA $10,X         ;write
+ EE06 [04] 3A86        13                  DEC LENGTH        ;LENGTH--
+ EE08 [03] 2703        14                  BEQ END           ;jump if flag Z=1
+ EE0A [01] 5C          15                  INCX              ;X++
+ EE0B [03] 20F5        16                  BRA START         ;jump to START
+                       17  
+ EE0D [09] 83          18  END:           SWI
+                       19  
+ FFFA                  20                 ORG $FFFA
+ FFFA      EE00        21                 DW $EE00
+ FFFC      EE00        22                 DW $EE00
+ FFFE      EE00        23                 DW $EE00
+                       24   
+
+ Symbol Table 
+
+END              EE0D
+LENGTH           0086
+LISTA            0080
+START            EE02
