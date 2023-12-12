@@ -2,6 +2,17 @@
 <br>
 <img src="https://imgur.com/ASIv9fb.png">
 <br>
+<h4>The processor to be programmed is the HC08.<br>This processor has 8 bits for data and 16 bits for addressing.</h4>
+<br>
+<img src="https://imgur.com/5xfXlwO.png">
+<br>
+<h4>The records held by HC08 are detailed below.</h4>
+<br>
+<img>
+<br>
+<h4>The data memory starts from address $80, while the program start memory starts from address $EE00 for HC908QY4 microcontroller.</h4>
+
+<br>
 <h4>Assembler exercises!👩‍💻</h4>
 <h2>Flowchart - First example</h2>
 <h4>Create a list of integers from address $80 to $90.<br>Apply Ca1 to all elements and keep them in the same direction.</h4>
