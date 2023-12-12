@@ -11,6 +11,11 @@
 <img src="https://imgur.com/js3AKtU.png">
 <br>
 <h2>Flowchart - Third example</h2>
-<h4>;Creates a list of 8 integers from address $83.<br>Determine if they are even numbers.<br>Count the number of even numbers.</h4>
+<h4>Creates a list of 8 integers from address $83.<br>Determine if they are even numbers.<br>Count the number of even numbers.</h4>
 <br>
 <img src="https://imgur.com/z8oh5jO.png">
+<br>
+<h2>Flowchart - Fourth example</h2>
+<h4>Create a list of 12 integers (even and odd), of size 1 Byte, stored at address $90.<br>Every time an odd value is found, 1 must be added to it and overwritten in the list.<br>At the end of the program, all values ​​in the list must be even.<br>At address $80 the number of elements in the list is indicated (LENGTH = 12).<br>Save the total of odd numbers at address $81.</h4>
+<br>
+<img src="https://imgur.com/kzt47hR.png">
