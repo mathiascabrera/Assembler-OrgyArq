@@ -1,0 +1,52 @@
+
+third_example.asm      Assembled with CASM08Z  11/12/2023  23:40:22  PAGE 1
+
+
+
+                        1  ;Creates a list of 8 integers from address $83
+                        2  ;Determine if they are even numbers.
+                        3  ;Count the number of even numbers.
+                        4  
+                        5  
+ 0083                   6                  ORG $83                             
+                                                                               
+ 0083      45D15578     7  LIST            DB $45,$D1,$55,$78,$FF,$01,$0D,$FF  
+                                                            ;1                 
+           FF010DFF 
+ 008B      08           8  LENGTH          DB $08                              
+                                                                               
+ 008C      00           9  PAIR            DB $00                              
+                                                                               
+                       10  
+ EE00                  11                  ORG $EE00
+ EE00 [02] AE83        12                  LDX #LIST
+ EE02 [02] F6          13  START:          LDA ,X
+ EE03 [02] A401        14                  AND #$01        ;determine parity
+ EE05 [03] 2707        15                  BEQ ISPAIR        ;if it is even 
+                                                                   jump to PAIR
+ EE07 [04] 3A8B        16  CONTINUE:       DEC LENGTH
+ EE09 [03] 2707        17                  BEQ END
+ EE0B [01] 5C          18                  INCX
+ EE0C [03] 20F4        19                  BRA START
+                       20                  
+ EE0E [04] 3C8C        21  ISPAIR:         INC PAIR
+ EE10 [03] 20F5        22                  BRA CONTINUE
+                       23                  
+ EE12 [09] 83          24  END:            SWI
+                       25  
+ FFFA                  26                  ORG $FFFA
+ FFFA      EE00        27                  DW $EE00
+ FFFC      EE00        28                  DW $EE00
+ FFFE      EE00        29                  DW $EE00
+                       30                  
+                       31   
+
+ Symbol Table 
+
+CONTINUE         EE07
+END              EE12
+ISPAIR           EE0E
+LENGTH           008B
+LIST             0083
+PAIR             008C
+START            EE02
