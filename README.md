@@ -8,7 +8,7 @@
 <br>
 <h4>The records held by HC08 are detailed below.</h4>
 <br>
-<img>
+<img src="https://imgur.com/2vfnZHc.png">
 <br>
 <h4>The data memory starts from address $80, while the program start memory starts from address $EE00 for HC908QY4 microcontroller.</h4>
 
